@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+NC="\[\e[0m\]"
+NOIR="\[\e[30;1m\]"
+VERT="\[\e[32;40m\]" #"\033[0;32;40m"
+JAUNE="\[\e[33;40m\]" #"\033[0;33;40m"
+ROUGE="\[\e[31;1m\]"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -57,9 +63,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[[\033[01;32m\]\u@\h\[\033[00m\]]-|-{\[\033[01;34m\]\w\[\033[00m} $: '
+    PS1='${debian_chroot:+($debian_chroot)}\[\e[30;42m\][\t]\[\e[30;43;51m\]|\u@\h|\[\e[42m\][\w]\[\e[46m\] $ >\[\e[0m\]'
+    #PS1='${debian_chroot:+($debian_chroot)}\[[\033[01;32m\]\u@\h\[\033[00m\]]-|-{\[\033[01;34m\]\w\[\033[00m} $: '
+    #export PS1="$NOIR[\t] $NC\u@\h:$JAUNE\w $VERT>$NC "
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}[\t]$JAUNE\u@\h[\w] $ >'
 fi
 unset color_prompt force_color_prompt
 
@@ -91,9 +99,9 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-#alias hatkey='python2 ~/hack/HatKey/HatKey.py'
+alias hatkey='python2 ~/hack/HatKey/HatKey.py'
 alias tt="watch sensors"
-alias youtubemp3="youtube-dl -t -x --audio-format mp3 --audio-quality 0"
+alias youtubemp3="youtube-dl -t -x --audio-format mp3 --audio-quality 0"s
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
