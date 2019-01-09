@@ -92,7 +92,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias hatkey='python2 ~/hack/HatKey/HatKey.py'
-alias tt="watch sensors"
+#alias tt="watch sensors"
 alias youtubemp3="youtube-dl -t -x --audio-format mp3 --audio-quality 0"
 
 # Add an "alert" alias for long running commands.  Use like so:
