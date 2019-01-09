@@ -2,11 +2,11 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-NC="\[\e[0m\]"
-NOIR="\[\e[30;1m\]"
-VERT="\[\e[32;40m\]" #"\033[0;32;40m"
-JAUNE="\[\e[33;40m\]" #"\033[0;33;40m"
-ROUGE="\[\e[31;1m\]"
+NC=\[\e[0m\]
+NOIR=\[\e[30;1m\]
+VERT=\[\e[32;40m\] #"\033[0;32;40m"
+JAUNE=\[\e[33;40m\] #"\033[0;33;40m"
+ROUGE"\[\e[31;1m\]
 
 # If not running interactively, don't do anything
 case $- in
